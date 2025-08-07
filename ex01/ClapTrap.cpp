@@ -12,13 +12,12 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() :	_hit(10),
+ClapTrap::ClapTrap() :	_name("Default"),
+						_hit(10),
 						_energy(10),
-						_attack(0),
-						_name("Default")
-
+						_attack(0)
 {
-	std::cout << "Creating ClapTrap" << _name << std::endl;
+	std::cout << "Creating ClapTrap " << _name << std::endl;
 	getHealth();
 }
 
@@ -29,13 +28,22 @@ ClapTrap::ClapTrap(const std::string name) :	_hit(10),
 	_name = name;
 	std::cout << "Creating ClapTrap Name: " << name << std::endl;
 	getHealth();
-
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other) : _hit(other._hit),
+ClapTrap::ClapTrap(const std::string name, int hit, int energy, int attack)
+{
+	_name = name;
+	_hit = hit;
+	_energy = energy;
+	_attack = attack;
+	std::cout << "Creating ClapTrap Name: " << name << std::endl;
+	getHealth();
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name),
+											_hit(other._hit),
 											_energy(other._energy),
-											_attack(other._attack),
-											_name(other._name)
+											_attack(other._attack)
 {
 	std::cout << "ClapTrap copied from " << _name << std::endl;
 }
@@ -60,15 +68,17 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if(_energy > 0)
+	if(_hit > 0 && _energy > 0)
 	{
 		--_energy;
 		++_attack;
 		std::cout << "ClapTrap " << _name << " attack " << target << std::endl;
 		std::cout << "causing " << _attack << " damage." << std::endl;
 	}
-	else if (_energy == 0)
+	else if (_energy == 0 && _hit > 0)
 		std::cout << _name << " have no energy left to attack " << target << std::endl;
+	else if (_hit == 0 && _energy > 0)
+		std::cout << _name << " can't hit " << target << " no more " << target << std::endl;
 	getHealth();
 }
 
