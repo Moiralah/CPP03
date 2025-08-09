@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:09:47 by huidris           #+#    #+#             */
-/*   Updated: 2025/08/08 06:09:48 by huidris          ###   ########.fr       */
+/*   Updated: 2025/08/09 08:33:23 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	ScavTrap::attack(const std::string& target)
 	if(_energy > 0)
 	{
 		--_energy;
-		++_attack;
 		std::cout << "ScavTrap " << _name << " attack " << target << std::endl;
 		std::cout << "causing " << _attack << " damage." << std::endl;
 	}

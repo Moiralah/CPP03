@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:09:20 by huidris           #+#    #+#             */
-/*   Updated: 2025/08/08 06:09:23 by huidris          ###   ########.fr       */
+/*   Updated: 2025/08/09 08:33:20 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	ClapTrap::attack(const std::string& target)
 	if(_hit > 0 && _energy > 0)
 	{
 		--_energy;
-		++_attack;
 		std::cout << "ClapTrap " << _name << " attack " << target << std::endl;
 		std::cout << "causing " << _attack << " damage." << std::endl;
 	}

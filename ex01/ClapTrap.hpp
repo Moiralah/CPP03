@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 23:23:54 by huidris           #+#    #+#             */
-/*   Updated: 2025/08/08 04:44:19 by huidris          ###   ########.fr       */
+/*   Updated: 2025/08/09 08:37:33 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {

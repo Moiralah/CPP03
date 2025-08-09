@@ -6,7 +6,7 @@
 /*   By: huidris <huidris@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 06:10:41 by huidris           #+#    #+#             */
-/*   Updated: 2025/08/08 06:10:42 by huidris          ###   ########.fr       */
+/*   Updated: 2025/08/09 08:29:08 by huidris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ ClapTrap::ClapTrap() :	_hit(10),
 						_energy(10),
 						_attack(0),
 						_name("Default")
-
 {
-	std::cout << "Creating ClapTrap" << _name << std::endl;
+	std::cout << "Creating ClapTrap " << _name << std::endl;
 	getHealth();
 }
 
@@ -29,7 +28,6 @@ ClapTrap::ClapTrap(const std::string name) :	_hit(10),
 	_name = name;
 	std::cout << "Creating ClapTrap Name: " << name << std::endl;
 	getHealth();
-
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) : _hit(other._hit),
@@ -63,7 +61,6 @@ void	ClapTrap::attack(const std::string& target)
 	if(_energy > 0)
 	{
 		--_energy;
-		++_attack;
 		std::cout << "ClapTrap " << _name << " attack " << target << std::endl;
 		std::cout << "causing " << _attack << " damage." << std::endl;
 	}
